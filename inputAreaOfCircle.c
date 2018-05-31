@@ -76,7 +76,7 @@ int main( int argc, char* argv[])
    r2 = *&b;
   }
  }
-for ( i = r1; i < r2; i++)
+for ( i = r1; i <= r2; i++)
  {
   float area = i * i * 3.1415;
   printf("A circle with radius %d has an area of %f\n", i, area);
