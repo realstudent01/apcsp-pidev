@@ -4,20 +4,24 @@
 #include <time.h>
 
 
-
-int chooseWord()
+int main()
 {
+ char wordArr[11][25] = { "soldier\0", "acquaintance\0", "capture\0", "pair\0", "bedroom\0", "beach\0", "support\0", "ice\0", "sensitivity\0", "fabricate\0","producer\0" };
+ srand(time(0));
+ int n = rand() % (11);
+ int l = strlen(wordArr[n]);
+ char wordString[l+1];
+ int i;
+ char a;
 
-  char wordArr[11][25] = { "soldier", "acquaintance", "capture", "pair", "bedroom", "beach", "support", "ice", "sensitivity", "fabricate", "producer" };
-  //int i = rand() % (11 + 1);
+ for ( i = 0; i < l; i++)
+ {
+  a = wordArr[n][i];
+  wordString[i] = a;
+ }
 
- // char arr[3] = {"soldier", "pair", "bedroom"};
- // char w = arr[2];
+ wordString[l] = '\0';
 
-// char word = "wordArr[i]";
-// printf("%s\n", w);
-
-
-
+ printf("%s\n", wordString);
 
 }
