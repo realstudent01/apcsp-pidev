@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "chooseWord.h"
 
 int chooseWord()
 {
@@ -26,4 +25,36 @@ int chooseWord()
  wordString[l] = '\0';
 
  printf("%s\n", wordString);
+}
+
+
+char getCharFromUser()
+{
+	char input[256];
+	char letter;
+	while (1)
+	{
+		printf("Guess a letter\n");
+		fgets(input, 256, stdin);
+		if (sscanf(input, "%c", &letter) == 1)
+		{
+			break;
+		}
+	}
+	return letter;
+}
+
+
+int main()
+{
+ char wordString[];
+ char letter;
+ char word[] = *wordString;
+
+ word[] = chooseWord();
+ letter = getCharFromUser();
+
+ printf("%s     %c\n", word, letter);
+
+
 }

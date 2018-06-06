@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include "chooseWord.h"
 
 char getCharFromUser()
 {
@@ -20,8 +20,14 @@ char getCharFromUser()
 
 int main()
 {
-	char letter;
-	int word;
+ char letter;
+// char word[1][];
+ char word[] = &wordString;
 
-	letter = getCharFromUser();
+ word[] = chooseWord();
+ letter = getCharFromUser();
+
+ printf("%s     %c\n", word, letter);
+
+
 }
