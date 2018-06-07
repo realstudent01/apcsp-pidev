@@ -3,9 +3,13 @@
 #include <string.h>
 #include <time.h>
 
+/* round will be used for the number of lost lives
+For the website we can just take out the parts of the code that printf stuff and just have the website display the current values of unguessedAlphabet, incorrectguesses, and the display words
+*/
+
 int main()
 {
- char wordArr[][25] = { "soldier", "acquaintance", "capture", "pair", "bedroom", "beach", "support", "ice", "sensitivity", "fabricate","producer", "awkward", "bagpipes", "dwarves", "zombie", "quizzes", "queue", "weekend" };
+ char wordArr[][25] = { "soldier", "acquaintance", "capture", "pair", "bedroom", "beach", "support", "ice", "sensitivity", "fabricate","producer", "awkward", "dwarves", "zombie", "quizzes", "queue", "weekend" };
  char unguessedAlphabet[27] = "abcdefghijklmnopqrstuvwxyz\0";
  char incorrectguesses[26];
 
@@ -28,7 +32,7 @@ int main()
  }
  wordString[l] = '\0';
 
-// printf("%s\n", wordString);
+ //printf("%s\n", wordString);
 
 
  char displaywordB[l];    // display word before
@@ -40,7 +44,6 @@ int main()
  char displaywordA[l];    // display word after
  displaywordA[l] = '\0';
 
-// while (strcmp(wordString, displaywordB) == 0)
  printf("%s\n", displaywordB);
  while (win == 0)
  {
@@ -87,6 +90,7 @@ int main()
    num = letter - 97;
    unguessedAlphabet[num] = '_';
    printf("%s\n", unguessedAlphabet);
+   printf("%s\n", incorrectguesses);
   }
   else
   {
