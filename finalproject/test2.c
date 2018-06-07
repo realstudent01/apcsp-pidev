@@ -34,7 +34,8 @@ int main()
  }
  char displaywordA[l];    // display word after
 
-while ( strcmp(wordString, displaywordA) == 1 )
+//while ( strcmp(wordString, displaywordA) == 0 )
+while (1)
 {
  char input[256];
  char letter;
