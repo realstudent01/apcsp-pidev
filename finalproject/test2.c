@@ -57,6 +57,12 @@ int main()
    break;
   }
 
+ if ( round > 7 )
+ {
+  printf("You Lose! The word was: %s\n", wordString);
+  break;
+ }
+
    while (1)
    {
     printf("Guess a letter\n");
