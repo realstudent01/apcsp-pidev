@@ -5,8 +5,8 @@
 
 int main()
 {
- char wordArr[][25] = { "soldier\0", "acquaintance\0", "capture\0", "pair\0", "bedroom\0", "beach\0", "support\0", "ice\0", "sensitivity\0", "fabricate\0","producer\0", "awkward\0", "bagpipes\0", "dwarves\0", "zombie\0", "quizzes\0", "queue\0", "weekend\0" };
- char unguessedAlphabet[26] = "abcdefghijklmnopqrstuvwxyz";
+ char wordArr[][25] = { "soldier", "acquaintance", "capture", "pair", "bedroom", "beach", "support", "ice", "sensitivity", "fabricate","producer", "awkward", "bagpipes", "dwarves", "zombie", "quizzes", "queue", "weekend" };
+ char unguessedAlphabet[27] = "abcdefghijklmnopqrstuvwxyz\0";
  char incorrectguesses[26];
 
  srand(time(NULL));
@@ -18,6 +18,8 @@ int main()
  int i;
  char a;
  int round;
+ int win = 0;
+ int num;
 
  for ( i = 0; i < l; i++)
  {
@@ -26,7 +28,7 @@ int main()
  }
  wordString[l] = '\0';
 
- printf("%s\n", wordString);
+// printf("%s\n", wordString);
 
 
  char displaywordB[l];    // display word before
@@ -38,17 +40,27 @@ int main()
  char displaywordA[l];    // display word after
  displaywordA[l] = '\0';
 
- while ( strcmp(wordString, displaywordA) == 0 )
+// while (strcmp(wordString, displaywordB) == 0)
+ printf("%s\n", displaywordB);
+ while (win == 0)
  {
   char input[256];
   char letter;
+
+  if (strcmp(displaywordB, wordString) == 0)
+  {
+   win = 1;
+   printf("You Win!\n");
+   break;
+  }
+
    while (1)
    {
     printf("Guess a letter\n");
     fgets(input, 256, stdin);
     if (sscanf(input, "%c", &letter) == 1)
     {
-     continue;		// I think tihs is the problem because it is breaking out of both while loops
+     break;
     }
    }
 
@@ -72,6 +84,9 @@ int main()
    printf("incorrect\n");
    round++;
    incorrectguesses[round] = letter;
+   num = letter - 97;
+   unguessedAlphabet[num] = '_';
+   printf("%s\n", unguessedAlphabet);
   }
   else
   {
@@ -83,12 +98,6 @@ int main()
   for (i = 0; i < l; i++)		//sets display word before to the display word after from the last round so that it is ready for next round
   {
    displaywordB[i] = displaywordA[i];
-  }
-
-  if (strcmp(displaywordB, wordString) == 1)
-  {
-   printf("You Win!\n");
-   break;
   }
  }
 }
