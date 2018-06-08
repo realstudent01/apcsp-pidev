@@ -11,8 +11,7 @@ int main()
 {
  char wordArr[][25] = { "soldier", "acquaintance", "capture", "pair", "bedroom", "beach", "support", "ice", "sensitivity", "fabricate","producer", "awkward", "dwarves", "zombie", "quizzes", "queue", "weekend" };
  char unguessedAlphabet[27] = "abcdefghijklmnopqrstuvwxyz\0";
- char incorrectguesses[10];
- incorrectguesses[8] = '\0';
+ char incorrectguesses[26];
 
  srand(time(NULL));
 
@@ -46,7 +45,9 @@ int main()
  displaywordA[l] = '\0';
 
  printf("%s\n", displaywordB);
- while (win == 0)
+
+
+/* while (win == 0)
  {
   char input[256];
   char letter;
@@ -89,7 +90,6 @@ int main()
     }
    }
 
-
   if (strcmp(displaywordB, displaywordA) == 0) //checks if the before and after are the same and if they are then the guess was wrong, if they're not the same then the guess was right
   {		// THING TO ADD: use ascii table and some math to go to where in the unused alphabet string the correct guess was in order to move that letter to the already guessed string
    printf("incorrect\n");
@@ -103,9 +103,6 @@ int main()
   else
   {
    printf("correct\n");
-   num = letter - 97;
-   unguessedAlphabet[num] = '_';
-   printf("%s\n", unguessedAlphabet);
   }
 
  printf("%s\n", displaywordA);
@@ -114,5 +111,5 @@ int main()
   {
    displaywordB[i] = displaywordA[i];
   }
- }
+ }*/
 }
