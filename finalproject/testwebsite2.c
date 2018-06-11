@@ -7,7 +7,7 @@
 For the website we can just take out the parts of the code that printf stuff and just have the website display the current values of unguessedAlphabet, incorrectguesses, and the display words
 */
 
-int main()
+int main(int argc, char* argv[])
 {
  char wordArr[][25] = { "soldier", "acquaintance", "capture", "pair", "bedroom", "beach", "support", "ice", "sensitivity", "fabricate","producer", "awkward", "dwarves", "zombie", "quizzes", "queue", "weekend" };
  char unguessedAlphabet[27] = "abcdefghijklmnopqrstuvwxyz\0";
@@ -32,7 +32,7 @@ int main()
  }
  wordString[l] = '\0';
 
- //printf("%s\n", wordString);
+ printf("%s\n", wordString);
 
 
  char displaywordB[l];    // display word before
@@ -51,7 +51,7 @@ int main()
   char input[256];
   char letter;
 
-  if (strcmp(displaywordB, wordString) == 0)
+  if (strcmp(input, wordString) == 0)
   {
    win = 1;
    printf("You Win!\n");
@@ -68,7 +68,7 @@ int main()
    {
     printf("Guess a letter\n");
     fgets(input, 256, stdin);
-    if (sscanf(input, "%c", &letter) == 1)
+    if (sscanf(input, "%s", &letter) == 1)
     {
      break;
     }
