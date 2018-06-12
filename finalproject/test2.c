@@ -131,7 +131,7 @@ int main()
  exit(1);
 }
 
- fprintf("output.txt", "The word that you were left with was %s, the actual word was %s, the number of lives you had left was %d\n", displaywordA, wordString, lives);
+ fprintf(output, "The word that you were left with was %s, the actual word was %s, the number of lives you had left was %d\n", displaywordA, wordString, lives);
  fclose(output);
 
 
