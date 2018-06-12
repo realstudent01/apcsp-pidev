@@ -125,11 +125,11 @@ int main()
 
  output = fopen("/home/student1/website/output.html", mode);
 
- if (( output = fopen("/home/student1/website/output.html", mode)) == NULL)
-{
- printf("Error opening file\n");
- exit(1);
-}
+  if (( output = fopen("/home/student1/website/output.html", mode)) == NULL)
+ {
+  printf("Error opening file\n");
+  exit(1);
+ }
 
  fprintf(output, "The word that you were left with was %s, the actual word was %s, the number of lives you had left was %d\n", displaywordA, wordString, lives);
  fclose(output);

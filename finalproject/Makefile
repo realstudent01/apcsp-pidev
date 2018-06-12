@@ -1,4 +1,4 @@
-TARGET = hangman
+TARGET = websitefinal
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall -I.
@@ -8,8 +8,8 @@ CFLAGS = -g -Wall -I.
 default: $(TARGET)
 all: default
 
-HEADERS = $(wildcard *.h)
-OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
+HEADERS =
+OBJECTS = websitefinal.o 
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
