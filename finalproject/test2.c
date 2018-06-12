@@ -115,4 +115,29 @@ int main()
    displaywordB[i] = displaywordA[i];
   }
  }
+
+
+ int lives = 8 - round;
+
+ FILE *output;
+ char *mode = "w";
+ char outputFileName[] = "output.txt";
+
+ output = fopen("output.txt", mode);
+
+ if (( output = fopen("output.txt", mode)) == NULL)
+{
+ printf("Error opening file\n");
+ exit(1);
+}
+
+ fprintf("output.txt", "The word that you were left with was %s, the actual word was %s, the number of lives you had left was %d\n", displaywordA, wordString, lives);
+ fclose(output);
+
+
+
+
+
+
+
 }
